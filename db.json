@@ -1,0 +1,17 @@
+[
+{
+"nome": "corolla",
+"imagem_chassi": "imagens/corolla/Chassi.png",
+"imagem_motor": "imagens/corolla/Motor.jpg"
+},
+{
+"nome": "onix",
+"imagem_chassi": "imagens/onix/Chassi.png",
+"imagem_motor": "imagens/onix/Onix.png"
+},
+{
+"nome": "Ford ka",
+"imagem_chassi": "imagens/ka/Chassi.png",
+"imagem_motor": "imagens/ka/Ka.png"
+}
+]
