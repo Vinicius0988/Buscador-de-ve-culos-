@@ -16,7 +16,6 @@ fetchVeiculos().then(data => {
     veiculosData = data;
 });
 
-// A função principal agora usa .find() para buscar o carro.
 function BuscarVeiculo() {
     if (!veiculosData) {
         console.error('Dados ainda não carregados. Tente novamente em alguns segundos.');
@@ -31,24 +30,26 @@ function BuscarVeiculo() {
     const motorImage = document.getElementById('motor-image');
     const messageCard = document.getElementById('message-card');
     const messageText = document.getElementById('message-text');
+    const chassiCard = document.getElementById('chassi-card');
+    const motorCard = document.getElementById('motor-card');
 
     messageCard.style.display = 'none';
 
     // Procura o carro no array.
-    const veiculoEncontrado = veiculosData.find(carro => carro.nome.toLowerCase() === termoBusca);
+    const veiculoEncontrado = veiculosData.find
+    (carro => `${carro.nome.toLowerCase()} ${carro.ano}` === termoBusca);
 
     if (veiculoEncontrado) {
         // Se o veículo for encontrado, atualiza as imagens.
         chassiImage.src = veiculoEncontrado.imagem_chassi;
         motorImage.src = veiculoEncontrado.imagem_motor;
-        chassiImage.style.display = 'block';
-        motorImage.style.display = 'block';
+        chassiCard.style.display = 'block';
+        motorCard.style.display = 'block';
         messageCard.style.display = 'none';
     } else {
-        // Se o veículo NÃO for encontrado, exibe a mensagem de erro.
-        chassiImage.style.display = 'none';
-        motorImage.style.display = 'none';
-        resultsContainer.classList.remove('hidden');
+        //Se o veículo NÃO for encontrado, exibe a mensagem de erro.
+        chassiCard.style.display = 'none';
+        motorCard.style.display = 'none';
 
         // Exibe a mensagem de erro
         messageCard.style.display = 'flex'; // Exibe o container da mensagem

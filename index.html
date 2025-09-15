@@ -6,6 +6,8 @@
     <title>Busca de Padrões</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="assets/procurar.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
    <header class="header">
@@ -15,7 +17,7 @@
    <div class="search-container">
         <input 
         type="text"
-        placeholder="Buscar veiculo"
+        placeholder="EX: ford ka 2020"
         class="search-input">
 
         <button onclick="BuscarVeiculo()"
@@ -25,19 +27,17 @@
     </div>
     <div id="results" class="results-container hidden">
 
-            <div class="image-card">
+            <div id="chassi-card" class="image-card">
                 <img id="chassi-image" class="imagem" alt="imagem do chassi">
             </div>
             
-            <div class="image-card">
+            <div id="motor-card"    class="image-card">
                 <img id="motor-image" class="imagem" alt="imagem do motor">
             </div>
 
-            <div id="message-card" class="image-card"
-             style="display: none; flex-direction: column; align-items: center; justify-content: center;">
-            <!-- Alterado style para centralizar ícone e texto -->
-            <img id="message-icon" alt="Ícone de Erro" style="width: 80px; height: 80px;">
-            <p id="message-text" style="color: #ffffff; margin-top: 10px;"></p>
+            <div id="message-card" class="image-card" style="display: none; flex-direction: column; align-items: center; justify-content: center;">
+                <i id="message-icon" class="fas fa-exclamation-triangle" style="font-size: 80px; color: red;"></i>
+                <p id="message-text" style="color: #ffffff; margin-top: 10px;"></p>
             </div>
 
     </div>
